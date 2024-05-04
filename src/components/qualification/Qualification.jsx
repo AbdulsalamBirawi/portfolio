@@ -75,7 +75,7 @@ const Qualification = () => {
 
             <div className="qual__data">
               <div>
-                <h3 className="qual__title">React Course</h3>
+                <h3 className="qual__title">React Advanced Course</h3>
                 <span className="qual__subtitle">coursera</span>
                 <div className="qual__calender">
                   <i className="uil uil-calendar-alt"></i>2019 - 2020
@@ -97,10 +97,10 @@ const Qualification = () => {
           >
             <div className="qual__data">
               <div>
-                <h3 className="qual__title">technical volunteer</h3>
-                <span className="qual__subtitle">Syria — BlueBits team</span>
+                <h3 className="qual__title">Craft Code</h3>
+                <span className="qual__subtitle">Syria</span>
                 <div className="qual__calender">
-                  <i className="uil uil-calendar-alt"></i>2017 - 2022
+                  <i className="uil uil-calendar-alt"></i>2020 - 2021
                 </div>
               </div>
               <div>
@@ -115,20 +115,20 @@ const Qualification = () => {
                 <span className="qual__line"></span>
               </div>
               <div>
-                <h3 className="qual__title">Mayar World</h3>
-                <span className="qual__subtitle">Ankara, Turkey</span>
+                <h3 className="qual__title">Uplink</h3>
+                <span className="qual__subtitle">Remote Egypt</span>
                 <div className="qual__calender">
-                  <i className="uil uil-calendar-alt"></i>2019 - 2020
+                  <i className="uil uil-calendar-alt"></i>2021 - 2023
                 </div>
               </div>
             </div>
 
             <div className="qual__data">
               <div>
-                <h3 className="qual__title">FreeLance Web Developer</h3>
-                <span className="qual__subtitle">online</span>
+                <h3 className="qual__title">Growth Hacker</h3>
+                <span className="qual__subtitle">Montreal, Canada</span>
                 <div className="qual__calender">
-                  <i className="uil uil-calendar-alt"></i>2021 - present
+                  <i className="uil uil-calendar-alt"></i>2023 - present
                 </div>
               </div>
               <div>

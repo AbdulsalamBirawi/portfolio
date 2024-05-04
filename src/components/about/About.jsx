@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/profile.jpg";
-import CV from "../../assets/MyResume.pdf";
+import CV from "../../assets/Abdalsalam_Albirawi.pdf";
 import Info from "./Info";
 
 const About = () => {
@@ -14,9 +14,14 @@ const About = () => {
         <div className="about__data">
           <Info />
           <p className="about__description">
-            Frontend Devloper , I created web pages with UI / UX user interface
-            , I have three years experience in react and could learn any
-            frontend framework
+            Hi there! I'm Abdalsalam, a passionate frontend developer with
+            expertise in React and its ecosystem, including React Native and
+            Next.js. With a keen eye for detail and a love for creating
+            interactive and user-friendly interfaces, I enjoy turning ideas into
+            beautifully crafted web and mobile applications. I am constantly
+            learning and exploring new technologies to stay ahead in the
+            ever-evolving world of frontend development. Let's collaborate and
+            bring your digital vision to life!
           </p>
           <a download="" href={CV} className="button button--flex">
             Downloud CV
