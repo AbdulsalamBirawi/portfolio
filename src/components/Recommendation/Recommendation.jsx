@@ -5,7 +5,7 @@ import RecommendationItems from "./RecommendationItems";
 
 const Recommendation = () => {
   return (
-    <section className="work section" id="portfolio">
+    <section className="work section" id="recommendation">
       <h2 className="section__title">Recommendations</h2>
       <span className="section__subtitle">My Recommendations</span>
       <div className="work__container container grid">
