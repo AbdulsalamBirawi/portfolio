@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Abdalsalam Al Birawi — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio: a space-themed, single-page site built with Next.js 16,
+Tailwind CSS v4 and GSAP.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- **Next.js 16** (App Router, TypeScript, static export-friendly)
+- **Tailwind CSS v4** with design tokens in `src/app/globals.css`
+- **GSAP 3** + ScrollTrigger + SplitText for scroll and kinetic-type animation
+- **Phosphor Icons**
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Structure
 
-### `npm test`
+```
+src/
+  app/
+    page.tsx          the portfolio
+    resume/page.tsx   plain, ATS-friendly resume
+    globals.css       design tokens, surfaces, keyframes
+  components/
+    Motion.tsx        one GSAP provider driving every scroll animation
+    Starfield.tsx     animated canvas star field
+    interactive.tsx   cursor glow, spotlight cards, count-up, marquee
+    vectors.tsx       inline SVG decoration
+    Hero.tsx, Nav.tsx, Section.tsx, sections.tsx
+  content/cv.ts       ALL copy lives here — both pages read from it
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Editing content
 
-### `npm run build`
+Every piece of text — roles, bullets, skills, education, contact details —
+lives in `src/content/cv.ts`. Change it there and both the portfolio and the
+resume page update together.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Animation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Elements opt into motion declaratively:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Attribute | Effect |
+|-----------|--------|
+| `data-reveal` | fade and rise on entry (`left` / `right` / `scale` variants) |
+| `data-split` | kinetic type, per character (or `lines`) |
+| `data-stagger` | reveal children in sequence |
+| `data-parallax="-12"` | drift with scroll |
+| `data-draw` | draw a rule from left to right |
 
-### `npm run eject`
+Everything respects `prefers-reduced-motion`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Imagery
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Space photography from NASA and ESA/Webb — see
+[`public/images/CREDITS.md`](public/images/CREDITS.md).
