@@ -51,6 +51,7 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -58,7 +59,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
+  /* Decoration is positioned relative to this, so it can never widen the page. */
+  position: relative;
+  width: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 ::selection {
@@ -138,10 +149,16 @@ body {
 }
 
 /* Aurora wash behind sections. */
+.nebula-glow {
+  overflow-x: clip;
+}
+
 .nebula-glow::before {
   content: "";
   position: absolute;
-  inset: -20% -10% auto -10%;
+  /* Kept inside the horizontal bounds: a blurred radial reads the same, and
+     any horizontal bleed would add page width on small screens. */
+  inset: -20% 0 auto 0;
   height: 60%;
   background: radial-gradient(
       60% 60% at 20% 30%,
@@ -288,6 +305,9 @@ body {
 .aurora {
   position: absolute;
   border-radius: 999px;
+  /* Blobs are deliberately larger than their container; clipping is handled by
+     the container, and max-width stops them widening a narrow viewport. */
+  max-width: 100vw;
   filter: blur(90px);
   opacity: 0.5;
   pointer-events: none;
@@ -336,7 +356,7 @@ body {
 .grain::after {
   content: "";
   position: fixed;
-  inset: -50%;
+  inset: 0;
   z-index: 60;
   pointer-events: none;
   opacity: 0.05;
@@ -345,10 +365,10 @@ body {
 }
 
 @keyframes grain-shift {
-  0% { transform: translate(0, 0); }
-  33% { transform: translate(-3%, 2%); }
-  66% { transform: translate(2%, -3%); }
-  100% { transform: translate(0, 0); }
+  0% { background-position: 0 0; }
+  33% { background-position: -30px 20px; }
+  66% { background-position: 20px -30px; }
+  100% { background-position: 0 0; }
 }
 
 /* Marquee ribbon. */

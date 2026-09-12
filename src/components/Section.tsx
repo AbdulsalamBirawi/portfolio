@@ -21,7 +21,12 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative scroll-mt-20 py-24 sm:py-32", className)}
+      className={cn(
+        // overflow-x-clip: sections carry absolutely positioned decoration
+        // that must never add page width on narrow screens.
+        "relative scroll-mt-20 overflow-x-clip py-24 sm:py-32",
+        className,
+      )}
     >
       <div className="mx-auto w-full max-w-[var(--shell)] px-5 sm:px-8">
         <header className="max-w-3xl">

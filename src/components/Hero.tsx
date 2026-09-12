@@ -133,16 +133,16 @@ export function Hero() {
             ].map((s) => (
               <div
                 key={s.label}
-                className="group bg-surface/80 px-5 py-6 transition-colors duration-300 hover:bg-surface sm:px-8"
+                className="group bg-surface/80 px-3.5 py-5 transition-colors duration-300 hover:bg-surface sm:px-8 sm:py-6"
               >
                 <dt className="sr-only">{s.label}</dt>
                 <dd>
                   <CountUp
                     value={s.value}
                     suffix={s.suffix}
-                    className="readout block text-3xl font-semibold text-foreground transition-colors duration-300 group-hover:text-accent-soft sm:text-4xl"
+                    className="readout block text-2xl font-semibold text-foreground transition-colors duration-300 group-hover:text-accent-soft sm:text-4xl"
                   />
-                  <span className="mt-2 block text-xs text-muted-foreground">
+                  <span className="mt-2 block text-[0.7rem] leading-tight text-muted-foreground sm:text-xs">
                     {s.label}
                   </span>
                 </dd>

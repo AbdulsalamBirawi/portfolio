@@ -100,7 +100,7 @@ export function Experience() {
       lead="From a first foundation in HTML and CSS to owning front-end architecture end to end."
       className="nebula-glow"
     >
-      <div className="relative">
+      <div className="relative overflow-x-clip">
         <div
           className="aurora -left-32 top-1/4 h-[26rem] w-[26rem] bg-accent/15"
           aria-hidden="true"
